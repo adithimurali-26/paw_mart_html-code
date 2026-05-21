@@ -1,1 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>PawMart Pet Supplies Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Paw<span>Mart</span></div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#products">Products</a>
+                <a href="#register">Registration</a>
+                <a href="#api">API Data</a>
+                <a href="#rest">REST vs SOAP</a>
+                <a href="#auth">Authentication</a>
+                <a href="#deploy">Deployment</a>
+                <a href="#case">Case Study</a>
+            </div>
+            <div class="clock" id="clock"></div>
+        </nav>
+    </header>
 
+    <main>
+        <section id="home">
+            <div class="hero">
+                <div>
+                    <h1>Your Pet's <span>Favorite Store</span></h1>
+                    <p>
+                        Buy premium pet food, grooming products,
+                        toys, and accessories for your lovely pets.
+                    </p>
+                    <button class="btn btn-primary">Shop Now</button>
+                </div>
+                <div class="emoji">🐶</div>
+            </div>
+        </section>
+
+        <section id="products">
+            <h2 class="section-title">Featured Products</h2>
+            <p class="section-sub">Explore our latest pet supplies.</p>
+            <div class="products">
+                <div class="card">
+                    <div class="card-img">🍖</div>
+                    <div class="card-body">
+                        <div class="category">Dog Food</div>
+                        <h3>Premium Kibble</h3>
+                        <p class="price">₹899</p>
+                        <button class="btn btn-primary">Buy Now</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">🧴</div>
+                    <div class="card-body">
+                        <div class="category">Grooming</div>
+                        <h3>Pet Shampoo</h3>
+                        <p class="price">₹499</p>
+                        <button class="btn btn-primary">Buy Now</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">🦴</div>
+                    <div class="card-body">
+                        <div class="category">Accessories</div>
+                        <h3>Chew Bone Toy</h3>
+                        <p class="price">₹299</p>
+                        <button class="btn btn-primary">Buy Now</button>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">🐱</div>
+                    <div class="card-body">
+                        <div class="category">Cat Food</div>
+                        <h3>Salmon Feast</h3>
+                        <p class="price">₹749</p>
+                        <button class="btn btn-primary">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="register">
+            <h2 class="section-title">Customer Registration</h2>
+            <p class="section-sub">Register to receive pet care offers.</p>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" id="name"/>
+                    <div class="error" id="nameError"></div>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="email"/>
+                    <div class="error" id="emailError"></div>
+                </div>
+                <div class="form-group">
+                    <label>Select Product</label>
+                    <select id="course">
+                        <option value="">Choose Product</option>
+                        <option>Dog Food</option>
+                        <option>Cat Food</option>
+                        <option>Pet Shampoo</option>
+                        <option>Accessories</option>
+                    </select>
+                    <div class="error" id="courseError"></div>
+                </div>
+                <button class="btn btn-primary">Submit</button>
+                <div class="success" id="successMessage">Registration Successful!</div>
+            </form>
+        </section>
+
+        <section id="api">
+            <h2 class="section-title">REST API Integration</h2>
+            <p class="section-sub">Users fetched using Fetch API.</p>
+            <div id="statusMessage"></div>
+            <div class="api-users" id="usersContainer"></div>
+        </section>
+
+        <section id="rest">
+            <h2 class="section-title">REST vs SOAP</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>REST API</h3>
+                    <p>
+                        REST uses JSON format and works over HTTP methods
+                        like GET, POST, PUT, and DELETE.
+                        It is lightweight and widely used in modern web applications.
+                    </p>
+                    <div class="code">GET /products</div>
+                </div>
+                <div class="info-card">
+                    <h3>SOAP API</h3>
+                    <p>
+                        SOAP uses XML-based messaging and follows strict standards.
+                        WSDL is used to describe SOAP web services.
+                        SOAP is commonly used in enterprise applications.
+                    </p>
+                    <div class="code">&lt;soap&gt; XML Request &lt;/soap&gt;</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="auth">
+            <h2 class="section-title">Authentication Concept</h2>
+            <div class="auth-box">
+                <input type="text" id="apiKey" placeholder="Enter API Key"/>
+                <br><br>
+                <button class="btn btn-primary" onclick="validateKey()">Verify Access</button>
+                <p id="authMessage"></p>
+            </div>
+        </section>
+
+        <section id="deploy">
+            <h2 class="section-title">Deployment Concept</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>GitHub</h3>
+                    <p>GitHub is used to store and manage project code using Git version control.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Netlify / Vercel</h3>
+                    <p>Hosting platforms used to deploy modern websites online easily.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Environment Variables</h3>
+                    <p>Environment variables help store API keys securely without exposing them in code.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="case">
+            <div class="case-study">
+                <h2>E-Commerce Case Study</h2>
+                <p>Online pet stores allow customers to browse products, place orders, and track deliveries digitally.</p>
+                <div class="flow">
+                    <div class="flow-box">
+                        <h4>Browse Products</h4>
+                        <p>Users explore available pet supplies.</p>
+                    </div>
+                    <div class="flow-box">
+                        <h4>Add to Cart</h4>
+                        <p>Customers select products to purchase.</p>
+                    </div>
+                    <div class="flow-box">
+                        <h4>Payment</h4>
+                        <p>Secure online payment is completed.</p>
+                    </div>
+                    <div class="flow-box">
+                        <h4>Delivery</h4>
+                        <p>Products are delivered to customers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        Created by Adithi Murali | Web Programming Assignment
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
